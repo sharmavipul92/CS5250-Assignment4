@@ -1,0 +1,15 @@
+{
+  "name": "cs5250-assignment4",
+  "version": "1.0.0",
+  "description": "CS5250 assignment4",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Vipul Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
