@@ -3,6 +3,7 @@ var filename = 'input.txt';
 var rr = require('./rr-algo');
 var srtf = require('./srtf-algo');
 var sjf = require('./sjf-algo');
+var fcfs = require('./fcfs-algo');
 
 function read_input(){
 	return fs.readFileSync(filename, 'utf-8').split('\n').map(line => line.split(' ').map(a => parseInt(a,10)));
@@ -28,6 +29,9 @@ function main(){
 	var processes = read_input();
 	console.log("printing input ----");
 	console.log(processes);
+	console.log("simulating FCFS ----");
+	var output_fcfs = fcfs.firstComeFirstServe(processes.map(function(arr) { return arr.slice(); }));
+	write_output('FCFS.txt', output_fcfs.transition, output_fcfs.waitingTime);
 	console.log("simulating RR ----");
 	var output_rr = rr.roundRobin(processes.map(function(arr) { return arr.slice(); }), 2);
 	write_output('RR.txt', output_rr.transition, output_rr.waitingTime);
